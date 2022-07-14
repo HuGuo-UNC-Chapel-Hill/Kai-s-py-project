@@ -26,6 +26,7 @@
 
 2. 選擇好正確月份，可用下拉菜單來選擇所有人員的優先安排事項：  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.59.56%20AM.png?raw=true)  
+
    要清理上月的優先安排，只需要框選整個表格區域，按鍵盤上的“delete”按鍵。  
    整個區域清空後，開始用下拉菜單安排新月份的優先事項即可。  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.01.18%20AM.png?raw=true).    
@@ -46,11 +47,11 @@
   python3 kai_ready.py
   
   程序會開開始運行，並且在終端窗口中顯示一些提示信息：  
-  ![alt twxt](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.15.12%20AM.png?raw=true)   
+  ![alt twxt](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2012.09.42%20PM.png?raw=true)   
   
   “Kai_read.py"運行完畢後，將會在當前目錄下自動生成單（當）月排班表的Excel文件.  
   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.08.26%20AM.png?raw=true)   
   
   打開後可以查閱當月安排詳情.  
   ![alt text](/Screenshots/Screen%20Shot%202022-07-14%20at%2010.03.19%20AM.png?raw=true)  
-  請保存上月的排班表，以便進行當前月份安排時可以優化本月值班次數。  
+  請保存上月的排班表，以便進行本月份安排時可以優化本月值班次數。  
