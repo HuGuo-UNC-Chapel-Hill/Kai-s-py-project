@@ -26,6 +26,7 @@
 
 2. 選擇好正確月份，可用下拉菜單來選擇所有人員的優先安排事項：  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.59.56%20AM.png?raw=true)  
+
    要清理上月的優先安排，只需要框選整個表格區域，按鍵盤上的“delete”按鍵。  
    整個區域清空後，開始用下拉菜單安排新月份的優先事項即可。  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.01.18%20AM.png?raw=true).    
