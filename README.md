@@ -31,7 +31,7 @@
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.01.18%20AM.png?raw=true).    
 
 
-3. 選者玩當月所有人員的優先安排後，表格會自動顯示本月每一個週日可用的人員列表。  
+3. 確定當月所有人員的優先安排後，表格會自動顯示本月每一個週日可用的人員列表。  
    “kai_ready.py”程序運行時會自動讀取有效日期下的人員列表。  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.00.36%20AM.png?raw=true)
 
