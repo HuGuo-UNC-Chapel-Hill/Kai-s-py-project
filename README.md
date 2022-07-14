@@ -50,6 +50,7 @@
   
   “Kai_read.py"運行完畢後，將會在當前目錄下自動生成單（當）月排班表的Excel文件.  
   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.08.26%20AM.png?raw=true)   
- 
+  
   打開後可以查閱當月安排詳情.  
   ![alt text](/Screenshots/Screen%20Shot%202022-07-14%20at%2010.03.19%20AM.png?raw=true)  
+  請保存上月的排班表，以便進行當前月份安排時可以優化本月值班次數。  
