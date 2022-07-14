@@ -93,7 +93,7 @@ arranged_schedule = [[], [], [], [], []]
 for x in assigned:
     if x in last_month_assigned_twice:
         assigned[x] = 1
-print("本月所有可安排人員如下， 共", len(assigned), "人, 如果上月已經擔班兩次，那麼初始優先級會通過 \"+1\" 值班日會降低：")
+print("本月所有可安排人員如下， 共", len(assigned), "人, 如果上月已經擔班兩次，那麼初始優先級會通過 \"+1\" 來降低：")
 print(assigned)
 print()
 #############################################################################
