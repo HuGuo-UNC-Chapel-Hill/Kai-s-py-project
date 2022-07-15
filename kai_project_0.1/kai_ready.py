@@ -100,7 +100,7 @@ print("本月所有可安排人員如下， 共", len(assigned), "人, 如果上
 print(assigned)
 print()
 #############################################################################
-
+# 進行排班運算並生成2D list
 for d in range(0, days):
     temp = [x for x in lists[d] if assigned.get(x) == 0]
     #    print(d, temp)
