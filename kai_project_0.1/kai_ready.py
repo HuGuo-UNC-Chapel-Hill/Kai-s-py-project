@@ -1,3 +1,8 @@
+###################
+# Author: Hu Guo
+# This program is used for automatically schedule works for members in Champaign Chinese Christian Church on the Sunday
+# v0.1001
+###################
 #安裝Python的Excel插件
 #在命令行下輸入： pip3 install openpyxl
 import openpyxl
@@ -93,7 +98,7 @@ arranged_schedule = [[], [], [], [], []]
 for x in assigned:
     if x in last_month_assigned_twice:
         assigned[x] = 1
-print("本月所有可安排人員如下， 共", len(assigned), "人, 如果上月已經擔班兩次，那麼初始優先級會通過 \"+1\" 來降低：")
+print("本月所有可安排人員如下， 共", len(assigned), "人, 如果上月已經擔班兩次，那麼初始優先級會通過 \"+1\" 值班日會降低：")
 print(assigned)
 print()
 #############################################################################
@@ -136,7 +141,7 @@ print()
 
 print("根據上月擔班概要和本月值班概要, 增加只擔班一次人員的下月擔班優先級.")
 print("如果上月已經擔班兩次，本月在最開始運行程序時已經手動 \"+1\" 降低過擔班優先級。")
-print("所以上月擔班兩次的人員在本月實際擔班1次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次：")
+print("所以上月擔班兩次的人員在本月實際擔班一次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次：")
 print()
 
 print("運行複核優先級程序。")
@@ -203,12 +208,15 @@ for i in range(7, 7 + days):
         shv.cell(i, j).value = arranged_schedule[i - 7][j - 2]
         currentCell = shv.cell(i, j)
         currentCell.alignment = Alignment(horizontal='center')
-        # if currentCell.value == "藍凱威":
-        if currentCell.value == "缺少人員":
+        if currentCell.value == "藍凱威":
+        # if currentCell.value == "缺少人員":
             shv.cell(i, j + 5).value = "空缺建議："
             list_suggest = [x for x in lists[i - 7] if x not in arranged_schedule[i - 7]]
-            for s in range(0, len(list_suggest)):
-                shv.cell(i, j + 6 + s).value = list_suggest[s]
+            if len(list_suggest) == 0:
+                shv.cell(i, j + 6).value = "無建議"
+            else:
+                for s in range(0, len(list_suggest)):
+                    shv.cell(i, j + 6 + s).value = list_suggest[s]
 
 str_1 = str(sh1['E1'].value) + "月擔班情況" + ".xlsx"
 wv.save(str_1)
