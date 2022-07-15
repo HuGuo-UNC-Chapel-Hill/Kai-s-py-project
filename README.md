@@ -1,6 +1,9 @@
 # Kai‘s py project
  Kai's Python project, reading and writing Excel file by openpyxl plugin
  
+# 安排規則
+  原則上每月每人擔班不超過兩次。如果某人本月實際擔班兩次，那麼下月將只擔班一次。  
+  結果： 如果某人連續每月擔班，那麼只平均每月擔班次數為1.5次。  
 
 # 運行環境：
 如果要運行此程序，必須安裝Python的openpyxl插件。
@@ -15,7 +18,7 @@
    再進入目錄“kai_project_0.1”：  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.04.36%20AM.png?raw=true).    
    
-   首先使用Microsoft offic軟件打開“kai_Excel.xlsx"逕行編輯，  
+   首先使用Microsoft offic軟件打開“kai_Excel.xlsx"進行編輯，  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.56.26%20AM.png?raw=true).   
    
    使程序順利運行， 需要首先在“kai_Excel.xlsx"文件中選擇正確的月份，在表格中“F1”點擊箭頭標籤來改變當前月份：  
@@ -42,16 +45,20 @@
 請一定要保存當前文檔！  
 請一定要保存當前文檔！  
 
-# 運行程序 
-  在終端窗口下進入“kai_project_0.1”目錄，然後輸入：  
-  python3 kai_ready.py
+#  運行程序 
+   運行方法有兩種：  
+1. 使用Pycharm一類的IDE軟件直接運行：  
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2012.15.58%20PM.png?raw=true)
+2. 在終端窗口下進入“kai_project_0.1”目錄，然後輸入：  
+   python3 kai_ready.py
   
-  程序會開開始運行，並且在終端窗口中顯示一些提示信息：  
-  ![alt twxt](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2012.09.42%20PM.png?raw=true)   
+   程序會開開始運行，並且在終端窗口中顯示一些提示信息：  
+   ![alt twxt](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2012.09.42%20PM.png?raw=true)   
   
-  “Kai_read.py"運行完畢後，將會在當前目錄下自動生成單（當）月排班表的Excel文件.  
-  ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.08.26%20AM.png?raw=true)   
+#  運行結果  
+   “Kai_read.py"運行完畢後，將會在當前目錄下自動生成單（當）月排班表的Excel文件.  
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.08.26%20AM.png?raw=true)   
   
-  打開後可以查閱當月安排詳情.  
-  ![alt text](/Screenshots/Screen%20Shot%202022-07-14%20at%2010.03.19%20AM.png?raw=true)  
-  請保存上月的排班表，以便進行本月份安排時可以優化本月值班次數。  
+   打開後可以查閱當月安排詳情.  
+   ![alt text](/Screenshots/Screen%20Shot%202022-07-14%20at%2010.03.19%20AM.png?raw=true)  
+   請保存上月的排班表，以便進行本月份安排時可以優化本月值班次數。  
