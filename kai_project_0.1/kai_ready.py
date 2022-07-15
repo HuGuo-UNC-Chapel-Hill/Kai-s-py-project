@@ -42,7 +42,6 @@ try:
 except:
     print("沒有發現" + str_p)
 
-
 print("上月擔班了兩次的人員名單: ", last_month_assigned_twice)
 print()
 
