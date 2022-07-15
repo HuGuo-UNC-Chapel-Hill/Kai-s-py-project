@@ -40,7 +40,7 @@
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.00.36%20AM.png?raw=true)
 
 4. 確認當前月份的優先安排後，請保存當前文檔。  
-![alt text](/Screenshots/Screen%20Shot%202022-07-14%20at%2010.24.21%20AM.png?raw=true).   
+![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.24.21%20AM.png?raw=true)    
 請一定要保存當前文檔！  
 請一定要保存當前文檔！  
 請一定要保存當前文檔！  
