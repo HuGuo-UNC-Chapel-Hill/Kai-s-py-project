@@ -1,5 +1,5 @@
-# Kai‘s py project
- Kai's Python project, reading and writing Excel file by openpyxl plugin
+# Kai‘s Python project
+ Kai's Python project, reading, computing, and writing Excel file by openpyxl plugin
  
 # 安排規則
   原則上每月每人擔班不超過兩次。如果某人本月實際擔班兩次，那麼下月將只擔班一次。  
