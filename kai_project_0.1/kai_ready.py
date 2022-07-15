@@ -8,10 +8,9 @@
 import openpyxl
 from openpyxl import Workbook
 from datetime import datetime
-
-# 讀取Excel表格初始可用人員
 from openpyxl.styles import PatternFill, Alignment
 
+# 讀取Excel表格初始可用人員
 wb = openpyxl.load_workbook("kai_Excel.xlsx", data_only=True)
 # print(type(wb))
 
