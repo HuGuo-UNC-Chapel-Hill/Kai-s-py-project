@@ -205,8 +205,8 @@ for i in range(7, 7 + days):
         shv.cell(i, j).value = arranged_schedule[i - 7][j - 2]
         currentCell = shv.cell(i, j)
         currentCell.alignment = Alignment(horizontal='center')
-        if currentCell.value == "藍凱威":
-            # if currentCell.value == "缺少人員":
+        # if currentCell.value == "藍凱威":
+        if currentCell.value == "缺少人員":
             shv.cell(i, j + 5).value = "空缺建議："
             list_suggest = [x for x in lists[i - 7] if x not in arranged_schedule[i - 7]]
             if len(list_suggest) == 0:
