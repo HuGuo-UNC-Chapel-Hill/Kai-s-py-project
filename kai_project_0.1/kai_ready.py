@@ -41,8 +41,7 @@ try:
             last_month_assigned_twice.append(name)
 except:
     print("沒有發現" + str_p)
-finally:
-    wp.close()
+
 
 print("上月擔班了兩次的人員名單: ", last_month_assigned_twice)
 print()
