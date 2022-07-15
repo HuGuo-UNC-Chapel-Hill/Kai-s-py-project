@@ -129,13 +129,13 @@ for d in range(0, days):
 print("本月排班結果： 共", len(sundays), "個週日。")
 for day in range(0, days):
     print(sundays[day], arranged_schedule[day])
+print()
 
 print("根據上月擔班概要和本月值班概要, 增加只擔班一次人員的下月擔班優先級.")
 print("如果上月已經擔班兩次，本月在最開始運行程序時已經手動 \"+1\" 降低過擔班優先級。")
 print("所以上月擔班兩次的人員在本月實際擔班一次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次：")
 print()
 
-print("運行複核優先級程序。")
 # 根據上月擔班概要和本月值班概要增加只擔班一次人員的下月擔班優先級
 for x in assigned:
     if x in last_month_assigned_twice:
