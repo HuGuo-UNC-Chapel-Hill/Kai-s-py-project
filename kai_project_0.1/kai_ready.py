@@ -1,6 +1,6 @@
 ###################
 # Author: Hu Guo
-# This program is used for automatically schedule works for members in Champaign Chinese Christian Church on the Sunday
+# This program is used to automatically schedule work for members of Champaign Chinese Christian Church on Sunday.
 # v0.1001
 ###################
 # 安裝Python的Excel插件
