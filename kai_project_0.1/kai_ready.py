@@ -1,7 +1,7 @@
 ###################
 # Author: Hu Guo
 # This program is used to automatically schedule work for members of Champaign Chinese Christian Church on Sunday.
-# v0.1001
+# v0.1002
 ###################
 # 安裝Python的Excel插件
 # 在命令行下輸入： pip3 install openpyxl
