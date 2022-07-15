@@ -129,14 +129,12 @@ while (d < days):
                 arranged_schedule[d].append("缺少人員")
     d += 1
 
-s = 0
-p = 0
-print("本月排班結果：", len(sundays), len(arranged_schedule))
-while p < days:
-    print(sundays[s], arranged_schedule[p])
-    s += 1
-    p += 1
-print()
+print("本月排班結果： 共", len(sundays), "個週日。")
+day = 0
+while day < days:
+    print(sundays[day], arranged_schedule[day])
+    day += 1
+
 
 print("根據上月擔班概要和本月值班概要, 增加只擔班一次人員的下月擔班優先級.")
 print("如果上月已經擔班兩次，本月在最開始運行程序時已經手動 \"+1\" 降低過擔班優先級。")
