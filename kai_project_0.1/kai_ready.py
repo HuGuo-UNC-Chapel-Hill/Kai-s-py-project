@@ -103,8 +103,7 @@ print(assigned)
 print()
 #############################################################################
 
-d = 0
-while (d < days):
+for d in range(0, days):
     temp = [x for x in lists[d] if assigned.get(x) == 0]
     #    print(d, temp)
     if len(temp) >= tasks:
@@ -127,7 +126,6 @@ while (d < days):
         elif len(temp_1) < tasks:
             for i in range(0, tasks - len(temp) - len(temp_1)):
                 arranged_schedule[d].append("缺少人員")
-    d += 1
 
 print("本月排班結果： 共", len(sundays), "個週日。")
 for day in range(0, days):
