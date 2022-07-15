@@ -3,7 +3,7 @@
  
 # 安排規則
   原則上每月每人擔班不超過兩次。如果某人本月實際擔班兩次，那麼下月將只擔班一次。  
-  結果： 如果某人連續每月擔班，那麼只平均每月擔班次數為1.5次。  
+  結果： 如果某人連續每月擔班，那麼平均每月擔班次數為1.5次。  
 
 # 運行環境：
 如果要運行此程序，必須安裝Python的openpyxl插件。
@@ -40,7 +40,7 @@
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.00.36%20AM.png?raw=true)
 
 4. 確認當前月份的優先安排後，請保存當前文檔。  
-![alt text](/Screenshots/Screen%20Shot%202022-07-14%20at%2010.24.21%20AM.png?raw=true).   
+![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.24.21%20AM.png?raw=true)    
 請一定要保存當前文檔！  
 請一定要保存當前文檔！  
 請一定要保存當前文檔！  
@@ -60,5 +60,5 @@
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.08.26%20AM.png?raw=true)   
   
    打開後可以查閱當月安排詳情.  
-   ![alt text](/Screenshots/Screen%20Shot%202022-07-14%20at%2010.03.19%20AM.png?raw=true)  
+   ![alt text](https://user-images.githubusercontent.com/86079744/179245280-948da2af-7ef3-45f3-9b11-5503923baa7f.png)   
    請保存上月的排班表，以便進行本月份安排時可以優化本月值班次數。  
