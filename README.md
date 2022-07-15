@@ -60,5 +60,5 @@
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.08.26%20AM.png?raw=true)   
   
    打開後可以查閱當月安排詳情.  
-   ![alt text](/Screenshots/Screen%20Shot%202022-07-14%20at%2010.03.19%20AM.png?raw=true)  
+   ![alt text](https://user-images.githubusercontent.com/86079744/179245280-948da2af-7ef3-45f3-9b11-5503923baa7f.png)   
    請保存上月的排班表，以便進行本月份安排時可以優化本月值班次數。  
