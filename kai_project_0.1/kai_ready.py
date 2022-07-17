@@ -1,17 +1,16 @@
 ###################
 # Author: Hu Guo
 # This program is used to automatically schedule work for members of Champaign Chinese Christian Church on Sunday.
-# v0.1001
+# v0.1002
 ###################
 # 安裝Python的Excel插件
 # 在命令行下輸入： pip3 install openpyxl
 import openpyxl
 from openpyxl import Workbook
 from datetime import datetime
-
-# 讀取Excel表格初始可用人員
 from openpyxl.styles import PatternFill, Alignment
 
+# 讀取Excel表格初始可用人員
 wb = openpyxl.load_workbook("kai_Excel.xlsx", data_only=True)
 # print(type(wb))
 
@@ -41,7 +40,6 @@ try:
             last_month_assigned_twice.append(name)
 except:
     print("沒有發現" + str_p)
-
 
 print("上月擔班了兩次的人員名單: ", last_month_assigned_twice)
 print()
@@ -102,9 +100,8 @@ print("本月所有可安排人員如下， 共", len(assigned), "人, 如果上
 print(assigned)
 print()
 #############################################################################
-
-d = 0
-while (d < days):
+# 進行排班運算並生成2D list
+for d in range(0, days):
     temp = [x for x in lists[d] if assigned.get(x) == 0]
     #    print(d, temp)
     if len(temp) >= tasks:
@@ -127,15 +124,10 @@ while (d < days):
         elif len(temp_1) < tasks:
             for i in range(0, tasks - len(temp) - len(temp_1)):
                 arranged_schedule[d].append("缺少人員")
-    d += 1
 
-s = 0
-p = 0
-print("本月排班結果：", len(sundays), len(arranged_schedule))
-while p < days:
-    print(sundays[s], arranged_schedule[p])
-    s += 1
-    p += 1
+print("本月排班結果： 共", len(sundays), "個週日。")
+for day in range(0, days):
+    print(sundays[day], arranged_schedule[day])
 print()
 
 print("根據上月擔班概要和本月值班概要, 增加只擔班一次人員的下月擔班優先級.")
@@ -143,7 +135,6 @@ print("如果上月已經擔班兩次，本月在最開始運行程序時已經�
 print("所以上月擔班兩次的人員在本月實際擔班一次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次：")
 print()
 
-print("運行複核優先級程序。")
 # 根據上月擔班概要和本月值班概要增加只擔班一次人員的下月擔班優先級
 for x in assigned:
     if x in last_month_assigned_twice:

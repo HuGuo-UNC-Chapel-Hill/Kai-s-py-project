@@ -1,5 +1,5 @@
-# Kai‘s py project
- Kai's Python project, reading and writing Excel file by openpyxl plugin
+# Kai‘s Python Project
+ Kai's Python project, reading, computing, and writing Excel file by openpyxl plugin
  
 # 安排規則
   原則上每月每人擔班不超過兩次。如果某人本月實際擔班兩次，那麼下月將只擔班一次。  
@@ -48,7 +48,7 @@
 #  運行程序 
    運行方法有兩種：  
 1. 使用Pycharm一類的IDE軟件直接運行：  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-15%20at%209.45.44%20AM.png?raw=true)
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-15%20at%209.49.00%20AM.png?raw=true)
 2. 在終端窗口下進入“kai_project_0.1”目錄，然後輸入：  
    python3 kai_ready.py
   
