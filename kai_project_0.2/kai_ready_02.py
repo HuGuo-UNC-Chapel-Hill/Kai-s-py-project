@@ -5,6 +5,7 @@
 ###################
 # 安裝Python的Excel插件
 # 在命令行下輸入： pip3 install openpyxl
+from calendar import c
 import openpyxl
 from openpyxl import Workbook
 from datetime import datetime
@@ -90,7 +91,7 @@ for i in range(0, days):
 # print(available_list)
 
 # 建立空白的Dictionary來存儲已安排了項目的人員與值班的天數
-attendence_list = dict()
+attendance_list = dict()
 
 # 從初始表格讀取待可值班人員並加入到本月可值班人員2D list
 for i in range(13, 13 + days):
@@ -98,7 +99,7 @@ for i in range(13, 13 + days):
         person = sh1.cell(j, i).value
         if person != None:
             available_list[i - 13].append(sh1.cell(j, i).value)
-            attendence_list[person] = 0
+            attendance_list[person] = 0
 
 
 # 測試打印初始人員名單
@@ -108,11 +109,11 @@ for i in range(0, days):
 print()
 
 # 參照上月擔班概要降低上月已經擔班兩次的人員的優先級別
-for person in attendence_list:
+for person in attendance_list:
     if person in last_month_assigned_twice:
-        attendence_list[person] = 1
-print("本月所有可安排人員如下， 共", len(attendence_list), "人, 如果上月已經擔班兩次，那麼初始優先級會通過 \"+1\" 降低：")
-print(attendence_list)
+        attendance_list[person] = 1
+print("本月所有可安排人員如下， 共", len(attendance_list), "人, 如果上月已經擔班兩次，那麼初始優先級會通過 \"+1\" 降低：")
+print(attendance_list)
 print()
 
 # 建立空白項目分配2D list
@@ -125,23 +126,23 @@ for i in range(0, days):
 # #############################################################################
 for day in range(0, days):
     for task in range(0, len(tasks)):
-        attended_0 = [person for person in available_list[day] if attendence_list[person] == 0]
+        attended_0 = [person for person in available_list[day] if attendance_list[person] == 0]
         workers = [person for person in skilled_list[task] if person in attended_0]
         if len(workers) > 0:
             worker = workers[0]
             arranged_lists[day].append(worker)
-            attendence_list[worker] = attendence_list.get(worker) + 1
+            attendance_list[worker] = attendance_list.get(worker) + 1
         else:
-            attended_1 = [person for person in available_list[day] if attendence_list[person] == 1]
+            attended_1 = [person for person in available_list[day] if attendance_list[person] == 1]
             workers = [person for person in skilled_list[task] if person in attended_1]
             if len(workers) > 0:
                 worker = workers[0]
                 arranged_lists[day].append(worker)
-                attendence_list[worker] = attendence_list.get(worker) + 1
+                attendance_list[worker] = attendance_list.get(worker) + 1
             else:
                 worker = "無安排"
                 arranged_lists[day].append(worker)
-# print(attendence_list, "\n")
+# print(attendance_list, "\n")
 # for day in range(0, days):
 #     print(arranged_lists[day])
 
@@ -156,34 +157,70 @@ print("所以上月擔班兩次的人員在本月實際擔班一次的情況下�
 print()
 
 # 根據上月擔班概要和本月值班概要增加只擔班一次人員的下月擔班優先級
-for person in attendence_list:
+for person in attendance_list:
     if person in last_month_assigned_twice:
-        attendence_list[person] = attendence_list.get(person) - 1
+        attendance_list[person] = attendance_list.get(person) - 1
 print("優化完畢")
 print()
 
-attended_1 = [person for person in attendence_list if attendence_list.get(person) == 1]
+attended_1 = [person for person in attendance_list if attendance_list.get(person) == 1]
 print("本月實際擔班一次的人員有", len(attended_1), "人。 下月可以擔班兩次。")
 print(attended_1)
 print()
 
-attended_2 = [x for x in attendence_list if attendence_list.get(x) == 2]
+attended_2 = [x for x in attendance_list if attendance_list.get(x) == 2]
 print("本月實際擔班兩次的人員有", len(attended_2), "人。 下月盡量只安排一次擔班。")
 print(attended_2, "\n")
 
 ##########################################################
+#  所有成員名單
+total_member_list =[]
+for row in range(4, 30):
+    person = sh1.cell(row, 1).value
+    if person != None:
+        total_member_list.append(person)
+print(total_member_list)
+
+
 # 生成優先安排的人名單
 total_attendence = dict()
 
-for i in range(4, 30):
-    person = sh1.cell(i, 1).value
-    attendence = 0
-    for j in range (7, 7 + days):
-        duty = sh1.cell(i, j).value     
-        if duty != None:
-            attendence += 1
-    if person in attendence_list:
-        total_attendence[person] = attendence_list.get(person) + attendence
+for person in attendance_list:
+    total_attendence[person] = []
+
+for row in range(4, 30):
+    person = sh1.cell(row, 1).value
+    duties = []
+    for column in range(7, 7 + days):
+        if person not in total_attendence:
+            row += 1
+        else:
+            data = sh1.cell(row, column).value
+            if data == None:
+                duties.append("")
+            else:
+                duties.append(data)
+    if person in total_attendence:
+        total_attendence[person] += duties
+
+# for person in total_attendence:
+#     print(person, " ", total_attendence.get(person))
+
+for day in range(0, days):
+    for task in range(0, len(tasks)):
+        total_attendence[arranged_lists[day][task]][day] = tasks[task]
+for person in total_attendence:
+    print(person, " ", total_attendence.get(person))
+
+# for i in range(4, 30):
+#     person = sh1.cell(i, 1).value
+#     attendence = 0
+#     for j in range (7, 7 + days):
+#         duty = sh1.cell(i, j).value     
+#         if duty != None:
+#             attendence += 1
+#     if person in attendance_list:
+#         total_attendence[person] = attendance_list.get(person) + attendence
 
 # print(total_attendence)
 
@@ -196,33 +233,20 @@ shv = wv.active
 shv['A1'].value = curr_month
 shv['B1'].value = "月擔班次數"
 count = 1
-for person in attendence_list:
+for person in attendance_list:
     shv.cell(2, count).value = person
     currentCell = shv.cell(2, count)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='center')
-    shv.cell(3, count).value = attendence_list[person]
+    shv.cell(3, count).value = attendance_list[person]
     shv.cell(4, count).value = "次"
     currentCell = shv.cell(4, count)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='right')
     count += 1
 
-shv['A13'].value = curr_month
-shv['B13'].value = "月綜合擔班次數"
-count = 1
-for person in total_attendence:
-    shv.cell(14, count).value = person
-    currentCell = shv.cell(14, count)  # or currentCell = ws['A1']
-    currentCell.alignment = Alignment(horizontal='center')
-    shv.cell(15, count).value = total_attendence[person]
-    shv.cell(16, count).value = "次"
-    currentCell = shv.cell(16, count)  # or currentCell = ws['A1']
-    currentCell.alignment = Alignment(horizontal='right')
-    count += 1
-
-b = 7
+row = 7
 for day in sundays:
-    shv.cell(b, 1).value = day
-    b += 1
+    shv.cell(row, 1).value = day
+    row += 1
 
 shv['B6'].value = "影視主控"
 shv['B6'].fill = PatternFill("solid", fgColor="FFC300")
@@ -255,6 +279,46 @@ for i in range(7, 7 + days):
             else:
                 for s in range(0, len(list_suggest)):
                     shv.cell(i, j + 6 + s).value = list_suggest[s]
+
+shv['B13'].value = curr_month
+shv['C13'].value = "月綜合擔班次數"
+count = 2
+for person in total_attendence:
+    shv.cell(14, count).value = person
+    currentCell = shv.cell(14, count)  # or currentCell = ws['A1']
+    currentCell.alignment = Alignment(horizontal='center')
+    attendance = 0
+    for day in range(0, days):
+        if total_attendence[person][day] != "":
+            attendance += 1
+    shv.cell(15, count).value = attendance
+    shv.cell(16, count).value = "次"
+    currentCell = shv.cell(16, count)  # or currentCell = ws['A1']
+    currentCell.alignment = Alignment(horizontal='right')
+    count += 1
+
+row = 18
+for day in sundays:
+    shv.cell(row, 1).value = day
+    row += 1
+persons = []
+for person in total_attendence:
+    persons.append(person)
+
+for column in range(2, 2 + len(total_attendence)):
+    # shv.cell(17, column).value = persons[column - 2]
+    # currentCell = shv.cell(18, column)
+    # currentCell.alignment = Alignment(horizontal='center')
+    # # print(total_attendence.get(persons[column - 2]))
+    temp = []
+    temp = total_attendence.get(persons[column - 2])
+    for row in range(18, 18 + days):
+        value = temp[row - 18]
+        if value != "":
+            print (value)
+            shv.cell(row, column).value = value
+            currentCell = shv.cell(row, column)
+            currentCell.alignment = Alignment(horizontal='center')
 
 str_1 = str(curr_month) + "月擔班情況" + ".xlsx"
 wv.save(str_1)
