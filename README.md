@@ -5,7 +5,7 @@
  The beta version can finish assigning tasks.
 
 # V0.2
- Adding skills to each member for specific tasks.
+ Adding skills to each member for specific tasks.  
  Adding total attendence report to the output Excel file.
 
 # 安排規則
