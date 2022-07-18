@@ -29,7 +29,7 @@ sh1 = wb['Sheet1']
 # 獲取上月已排班兩次人員名單
 last_month_assigned_twice = []
 
-curr_month = sh1['F1'].value
+curr_month = sh1['E1'].value
 print("\n當前安排", curr_month, "月份值班人員")
 
 # 生成上月值班表格文件名
