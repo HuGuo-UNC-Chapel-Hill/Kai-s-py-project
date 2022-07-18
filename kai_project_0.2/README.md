@@ -25,8 +25,7 @@
    首先使用Microsoft offic軟件打開“kai_Excel_2_Marco.xlsm"進行編輯，  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%202.56.59%20PM.png?raw=true)     
    
-   “kai_Excel_2_Marco.xlsm"中添加了一鍵清除當前優先安排的功能。 如果要使用這項功能，必須在打開文件的時候允許“Enable Macros." 否則只能手動使用“delete”鍵清除。
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.17.06%20AM.png?raw=true)
+   “kai_Excel_2_Marco.xlsm"中添加了一鍵清除當前優先安排的功能。 如果要使用這項功能，必須在打開文件的時候允許“Enable Macros." 否則只能手動使用“delete”鍵清除。  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-17%20at%205.30.32%20PM.png?raw=true)   
    
    使程序順利運行， 需要首先在“kai_Excel_2_Marco.xlsm"文件中選擇正確的月份，在表格中“F1”點擊箭頭標籤來改變當前月份：     
