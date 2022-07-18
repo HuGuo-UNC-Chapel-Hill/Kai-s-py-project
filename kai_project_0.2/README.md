@@ -36,7 +36,7 @@
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.25.25%20PM.png?raw=true)
 
 2. 要清理上月的優先安排，點擊“清理當前所有優先安排。“  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.47.18%20PM.png?raw=true)
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.47.18%20PM.png?raw=true).   
    整個區域清空後，開始用下拉菜單安排新月份的優先事項即可。  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.27.39%20PM.png?raw=true).    
 
