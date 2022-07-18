@@ -35,10 +35,7 @@
    改變後的效果，每月的週日天數會隨月份改變而自動改變  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.25.25%20PM.png?raw=true)
 
-2. 選擇好正確月份，可用下拉菜單來選擇所有人員的優先安排事項：  
-![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.59.56%20AM.png?raw=true)  
-
-   要清理上月的優先安排，點擊“清理當前所有優先安排。“  
+2. 要清理上月的優先安排，點擊“清理當前所有優先安排。“  
    整個區域清空後，開始用下拉菜單安排新月份的優先事項即可。  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.27.39%20PM.png?raw=true).    
 
