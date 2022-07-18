@@ -1,4 +1,4 @@
-# Kai‘s Python Project
+# Kai‘s Python Project（v0.2）
  Kai's Python project, reading, computing, and writing Excel file by openpyxl plugin
  
 # 安排規則
