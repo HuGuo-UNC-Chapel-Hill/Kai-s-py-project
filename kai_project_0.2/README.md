@@ -33,19 +33,19 @@
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.07.50%20PM.png?raw=true)   
 
    改變後的效果，每月的週日天數會隨月份改變而自動改變  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.56.48%20AM.png?raw=true)
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.25.25%20PM.png?raw=true)
 
 2. 選擇好正確月份，可用下拉菜單來選擇所有人員的優先安排事項：  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.59.56%20AM.png?raw=true)  
 
-   要清理上月的優先安排，點擊情理所有優先安排。  
+   要清理上月的優先安排，點擊“清理當前所有優先安排。“  
    整個區域清空後，開始用下拉菜單安排新月份的優先事項即可。  
-![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.01.18%20AM.png?raw=true).    
+![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.27.39%20PM.png?raw=true).    
 
 
 3. 確定當月所有人員的優先安排後，表格會自動顯示本月每一個週日可用的人員列表。  
    “kai_ready.py”程序運行時會自動讀取有效日期下的人員列表。  
-![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.00.36%20AM.png?raw=true)
+![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.10.17%20PM.png?raw=true)
 
 4. 確認當前月份的優先安排後，請保存當前文檔。  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.24.21%20AM.png?raw=true)    
@@ -56,17 +56,18 @@
 #  運行程序 
    運行方法有兩種：  
 1. 使用Pycharm一類的IDE軟件直接運行：  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-15%20at%209.49.00%20AM.png?raw=true)
-2. 在終端窗口下進入“kai_project_0.1”目錄，然後輸入：  
-   python3 kai_ready.py
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.33.27%20PM.png?raw=true)
+   
+2. 在終端窗口下進入“kai_project_0.2”目錄，然後輸入：  
+   python3 kai_ready_02.py
   
    程序會開開始運行，並且在終端窗口中顯示一些提示信息：  
-   ![alt twxt](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2012.09.42%20PM.png?raw=true)   
+   ![alt twxt](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.37.54%20PM.png?raw=true)   
   
 #  運行結果  
-   “Kai_read.py"運行完畢後，將會在當前目錄下自動生成單（當）月排班表的Excel文件.  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.08.26%20AM.png?raw=true)   
+   “kai_read_02.py"運行完畢後，將會在當前目錄下自動生成單（當）月排班表的Excel文件.  
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.39.12%20PM.png?raw=true)   
   
-   打開後可以查閱當月安排詳情.  
-   ![alt text](https://user-images.githubusercontent.com/86079744/179245280-948da2af-7ef3-45f3-9b11-5503923baa7f.png)   
+   打開後可以查閱當月安排詳情以及本月綜合擔班的詳情與次數。  
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.39.57%20PM.png?raw=true)   
    請保存上月的排班表，以便進行本月份安排時可以優化本月值班次數。  
