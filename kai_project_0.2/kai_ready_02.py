@@ -183,16 +183,16 @@ for row in range(4, 30):
 
 
 # 生成優先安排的人名單
-total_attendence = dict()
+total_attendance = dict()
 
 for person in attendance_list:
-    total_attendence[person] = []
+    total_attendance[person] = []
 
 for row in range(4, 30):
     person = sh1.cell(row, 1).value
     duties = []
     for column in range(7, 7 + days):
-        if person not in total_attendence:
+        if person not in total_attendance:
             row += 1
         else:
             data = sh1.cell(row, column).value
@@ -200,21 +200,21 @@ for row in range(4, 30):
                 duties.append("")
             else:
                 duties.append(data)
-    if person in total_attendence:
-        total_attendence[person] += duties
+    if person in total_attendance:
+        total_attendance[person] += duties
 
-# for person in total_attendence:
-#     print(person, " ", total_attendence.get(person))
+# for person in total_attendance:
+#     print(person, " ", total_attendance.get(person))
 
 # 本月綜合擔班情況
 print("本月綜合擔班情況")
 for day in range(0, days):
     for task in range(0, len(tasks)):
-        total_attendence[arranged_lists[day][task]][day] = tasks[task]
-for person in total_attendence:
-    print(person, " ", total_attendence.get(person))
+        total_attendance[arranged_lists[day][task]][day] = tasks[task]
+for person in total_attendance:
+    print(person, " ", total_attendance.get(person))
 
-# print(total_attendence)
+# print(total_attendance)
 
 
 ####################################################
@@ -222,18 +222,18 @@ for person in total_attendence:
 wv = Workbook()
 wv['Sheet'].title = "sheet1"
 shv = wv.active
-shv['A1'].value = curr_month
-shv['B1'].value = "月擔班次數"
-count = 1
+shv['B1'].value = curr_month
+shv['C1'].value = "月擔班次數"
+column = 2
 for person in attendance_list:
-    shv.cell(2, count).value = person
-    currentCell = shv.cell(2, count)  # or currentCell = ws['A1']
+    shv.cell(2, column).value = person
+    currentCell = shv.cell(2, column)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='center')
-    shv.cell(3, count).value = attendance_list[person]
-    shv.cell(4, count).value = "次"
-    currentCell = shv.cell(4, count)  # or currentCell = ws['A1']
+    shv.cell(3, column).value = attendance_list[person]
+    shv.cell(4, column).value = "次"
+    currentCell = shv.cell(4, column)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='right')
-    count += 1
+    column += 1
 
 row = 7
 for day in sundays:
@@ -275,13 +275,13 @@ for i in range(7, 7 + days):
 shv['B13'].value = curr_month
 shv['C13'].value = "月綜合擔班次數"
 count = 2
-for person in total_attendence:
+for person in total_attendance:
     shv.cell(14, count).value = person
     currentCell = shv.cell(14, count)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='center')
     attendance = 0
     for day in range(0, days):
-        if total_attendence[person][day] != "":
+        if total_attendance[person][day] != "":
             attendance += 1
     shv.cell(15, count).value = attendance
     shv.cell(16, count).value = "次"
@@ -295,16 +295,16 @@ for day in sundays:
     row += 1
 
 persons = []
-for person in total_attendence:
+for person in total_attendance:
     persons.append(person)
 
-for column in range(2, 2 + len(total_attendence)):
+for column in range(2, 2 + len(total_attendance)):
     # shv.cell(17, column).value = persons[column - 2]
     # currentCell = shv.cell(18, column)
     # currentCell.alignment = Alignment(horizontal='center')
-    # # print(total_attendence.get(persons[column - 2]))
+    # # print(total_attendance.get(persons[column - 2]))
     temp = []
-    temp = total_attendence.get(persons[column - 2])
+    temp = total_attendance.get(persons[column - 2])
     for row in range(17, 17 + days):
         value = temp[row - 17]
         if value != "":
