@@ -6,6 +6,7 @@
 
 # V0.2
  Adding skills to each member for specific tasks.
+ Adding total attendence report to the output Excel file.
 
 # 安排規則
   原則上每月每人擔班不超過兩次。如果某人本月實際擔班兩次，那麼下月將只擔班一次。  

@@ -169,7 +169,24 @@ print()
 
 attended_2 = [x for x in attendence_list if attendence_list.get(x) == 2]
 print("本月實際擔班兩次的人員有", len(attended_2), "人。 下月盡量只安排一次擔班。")
-print(attended_2)
+print(attended_2, "\n")
+
+##########################################################
+# 生成優先安排的人名單
+total_attendence = dict()
+
+for i in range(4, 30):
+    person = sh1.cell(i, 1).value
+    attendence = 0
+    for j in range (7, 7 + days):
+        duty = sh1.cell(i, j).value     
+        if duty != None:
+            attendence += 1
+    if person in attendence_list:
+        total_attendence[person] = attendence_list.get(person) + attendence
+
+# print(total_attendence)
+
 
 ####################################################
 # 保存排班概況與詳細安排到新xlsx文件
@@ -177,21 +194,34 @@ wv = Workbook()
 wv['Sheet'].title = "sheet1"
 shv = wv.active
 shv['A1'].value = curr_month
-shv['B1'].value = "月擔班情況"
+shv['B1'].value = "月擔班次數"
 count = 1
-for x in attendence_list:
-    shv.cell(2, count).value = x
+for person in attendence_list:
+    shv.cell(2, count).value = person
     currentCell = shv.cell(2, count)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='center')
-    shv.cell(3, count).value = attendence_list[x]
+    shv.cell(3, count).value = attendence_list[person]
     shv.cell(4, count).value = "次"
     currentCell = shv.cell(4, count)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='right')
     count += 1
 
+shv['A13'].value = curr_month
+shv['B13'].value = "月綜合擔班次數"
+count = 1
+for person in total_attendence:
+    shv.cell(14, count).value = person
+    currentCell = shv.cell(14, count)  # or currentCell = ws['A1']
+    currentCell.alignment = Alignment(horizontal='center')
+    shv.cell(15, count).value = total_attendence[person]
+    shv.cell(16, count).value = "次"
+    currentCell = shv.cell(16, count)  # or currentCell = ws['A1']
+    currentCell.alignment = Alignment(horizontal='right')
+    count += 1
+
 b = 7
-for x in sundays:
-    shv.cell(b, 1).value = x
+for day in sundays:
+    shv.cell(b, 1).value = day
     b += 1
 
 shv['B6'].value = "影視主控"
@@ -217,7 +247,7 @@ for i in range(7, 7 + days):
         currentCell = shv.cell(i, j)
         currentCell.alignment = Alignment(horizontal='center')
         # if currentCell.value == "藍凱威":
-        if currentCell.value == "缺少人員":
+        if currentCell.value == "無安排":
             shv.cell(i, j + 5).value = "空缺建議："
             list_suggest = [person for person in available_list[i - 7] if person not in arranged_lists[i - 7]]
             if len(list_suggest) == 0:
