@@ -17,16 +17,21 @@
 
 # 運行前提： 
 1. 下載本項目的zip，解壓後進入目錄“Kai-s-py-project”，  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.17.42%20AM.png?raw=true).   
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.17.42%20AM.png?raw=true)   
    
    再進入目錄“kai_project_0.2”：  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.18.03%20AM.png?raw=true).    
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.18.03%20AM.png?raw=true)    
    
-   首先使用Microsoft offic軟件打開“kai_Excel.xlsx"進行編輯，  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.56.26%20AM.png?raw=true).   
+   首先使用Microsoft offic軟件打開“kai_Excel_2_Marco.xlsm"進行編輯，  
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%202.56.59%20PM.png?raw=true)     
+   
+   “kai_Excel_2_Marco.xlsm"中添加了一鍵清除當前優先安排的功能。 如果要使用這項功能，必須在打開文件的時候允許“Enable Macros." 否則只能手動使用“delete”鍵清除。
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.17.06%20AM.png?raw=true)
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-17%20at%205.30.32%20PM.png?raw=true)   
    
    使程序順利運行， 需要首先在“kai_Excel_2_Marco.xlsm"文件中選擇正確的月份，在表格中“F1”點擊箭頭標籤來改變當前月份：  
-![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.56.39%20AM.png?raw=true).   
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%202.56.59%20PM.png?raw=true)    
+![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.56.39%20AM.png?raw=true)   
 
    改變後的效果，每月的週日天數會隨月份改變而自動改變  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.56.48%20AM.png?raw=true)
