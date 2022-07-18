@@ -29,9 +29,8 @@
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.17.06%20AM.png?raw=true)
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-17%20at%205.30.32%20PM.png?raw=true)   
    
-   使程序順利運行， 需要首先在“kai_Excel_2_Marco.xlsm"文件中選擇正確的月份，在表格中“F1”點擊箭頭標籤來改變當前月份：  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%202.56.59%20PM.png?raw=true)    
-![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.56.39%20AM.png?raw=true)   
+   使程序順利運行， 需要首先在“kai_Excel_2_Marco.xlsm"文件中選擇正確的月份，在表格中“F1”點擊箭頭標籤來改變當前月份：     
+![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%203.07.50%20PM.png?raw=true)   
 
    改變後的效果，每月的週日天數會隨月份改變而自動改變  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.56.48%20AM.png?raw=true)
@@ -39,7 +38,7 @@
 2. 選擇好正確月份，可用下拉菜單來選擇所有人員的優先安排事項：  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.59.56%20AM.png?raw=true)  
 
-   要清理上月的優先安排，只需要框選整個表格區域，按鍵盤上的“delete”按鍵。  
+   要清理上月的優先安排，點擊情理所有優先安排。  
    整個區域清空後，開始用下拉菜單安排新月份的優先事項即可。  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.01.18%20AM.png?raw=true).    
 
