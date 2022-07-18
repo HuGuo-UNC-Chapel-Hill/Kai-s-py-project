@@ -17,15 +17,15 @@
 
 # 運行前提： 
 1. 下載本項目的zip，解壓後進入目錄“Kai-s-py-project”，  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.04.30%20AM.png?raw=true).   
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.17.42%20AM.png?raw=true).   
    
-   再進入目錄“kai_project_0.1”：  
-   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2011.04.36%20AM.png?raw=true).    
+   再進入目錄“kai_project_0.2”：  
+   ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-18%20at%2011.18.03%20AM.png?raw=true).    
    
    首先使用Microsoft offic軟件打開“kai_Excel.xlsx"進行編輯，  
    ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%2010.56.26%20AM.png?raw=true).   
    
-   使程序順利運行， 需要首先在“kai_Excel.xlsx"文件中選擇正確的月份，在表格中“F1”點擊箭頭標籤來改變當前月份：  
+   使程序順利運行， 需要首先在“kai_Excel_2_Marco.xlsm"文件中選擇正確的月份，在表格中“F1”點擊箭頭標籤來改變當前月份：  
 ![alt text](https://github.com/HuGuo-UNC-Chapel-Hill/Kai-s-py-project/blob/main/Screenshots/Screen%20Shot%202022-07-14%20at%209.56.39%20AM.png?raw=true).   
 
    改變後的效果，每月的週日天數會隨月份改變而自動改變  
