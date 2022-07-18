@@ -179,7 +179,7 @@ for row in range(4, 30):
     person = sh1.cell(row, 1).value
     if person != None:
         total_member_list.append(person)
-print(total_member_list)
+# print(total_member_list)
 
 
 # 生成優先安排的人名單
@@ -196,7 +196,7 @@ for row in range(4, 30):
             row += 1
         else:
             data = sh1.cell(row, column).value
-            if data == None:
+            if data == None or data == "其他":
                 duties.append("")
             else:
                 duties.append(data)
@@ -206,21 +206,13 @@ for row in range(4, 30):
 # for person in total_attendence:
 #     print(person, " ", total_attendence.get(person))
 
+# 本月綜合擔班情況
+print("本月綜合擔班情況")
 for day in range(0, days):
     for task in range(0, len(tasks)):
         total_attendence[arranged_lists[day][task]][day] = tasks[task]
 for person in total_attendence:
     print(person, " ", total_attendence.get(person))
-
-# for i in range(4, 30):
-#     person = sh1.cell(i, 1).value
-#     attendence = 0
-#     for j in range (7, 7 + days):
-#         duty = sh1.cell(i, j).value     
-#         if duty != None:
-#             attendence += 1
-#     if person in attendance_list:
-#         total_attendence[person] = attendance_list.get(person) + attendence
 
 # print(total_attendence)
 
@@ -297,10 +289,11 @@ for person in total_attendence:
     currentCell.alignment = Alignment(horizontal='right')
     count += 1
 
-row = 18
+row = 17
 for day in sundays:
     shv.cell(row, 1).value = day
     row += 1
+
 persons = []
 for person in total_attendence:
     persons.append(person)
@@ -312,10 +305,10 @@ for column in range(2, 2 + len(total_attendence)):
     # # print(total_attendence.get(persons[column - 2]))
     temp = []
     temp = total_attendence.get(persons[column - 2])
-    for row in range(18, 18 + days):
-        value = temp[row - 18]
+    for row in range(17, 17 + days):
+        value = temp[row - 17]
         if value != "":
-            print (value)
+            # print (value)
             shv.cell(row, column).value = value
             currentCell = shv.cell(row, column)
             currentCell.alignment = Alignment(horizontal='center')
