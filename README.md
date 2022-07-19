@@ -6,7 +6,7 @@
 
 # V0.2
  Adding skills to each member for specific tasks.  
- Add the total attendance report to the output Excel file.
+ Add the total attendance report to the output Excel file.  
  Add current year to the output Excel file.
 
 # 安排規則
