@@ -1,7 +1,7 @@
 ###################
 # Author: Hu Guo
 # This program is used to automatically schedule work for members of Champaign Chinese Christian Church on Sunday.
-# v0.2002
+# v0.1002
 ###################
 # 安裝Python的Excel插件
 # 在命令行下輸入： pip3 install openpyxl
@@ -29,14 +29,16 @@ sh1 = wb['Sheet1']
 # 獲取上月已排班兩次人員名單
 last_month_assigned_twice = []
 
+curr_year = sh1['B1'].value
+
 curr_month = sh1['E1'].value
-print("\n當前安排", curr_month, "月份值班人員")
+print("\n當前安排", curr_year, "年",curr_month, "月份值班人員")
 
 # 生成上月值班表格文件名
 if curr_month == 1:
-    str_p = "12" + "月擔班情況.xlsx"
+    str_p = str(curr_year - 1) + "年12月擔班情況.xlsx"
 else:
-    str_p = str(curr_month - 1) + "月擔班情況.xlsx"
+    str_p = str(curr_year) + "年" +str(curr_month - 1) + "月擔班情況.xlsx"
 
 try:
     wp = openpyxl.load_workbook(str_p)
@@ -316,5 +318,5 @@ for column in range(2, 2 + len(total_attendance)):
             currentCell = shv.cell(row, column)
             currentCell.alignment = Alignment(horizontal='center')
 
-str_1 = str(curr_month) + "月擔班情況" + ".xlsx"
+str_1 = str(curr_year) + "年" + str(curr_month) + "月擔班情況" + ".xlsx"
 wv.save(str_1)
