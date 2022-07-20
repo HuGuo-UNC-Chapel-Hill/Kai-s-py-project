@@ -9,6 +9,7 @@
  Add the total attendance report to the output Excel file.  
  Add current year to the output Excel file.  
  Balancing works for a person with attendance as zero.
+ Balancing works for a person with too many attendances in one month.
 
 # 安排規則
   原則上每月每人擔班不超過兩次。如果某人本月實際擔班兩次，那麼下月將只擔班一次。  
