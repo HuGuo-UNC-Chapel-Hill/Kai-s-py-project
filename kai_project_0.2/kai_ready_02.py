@@ -167,7 +167,7 @@ for person in no_attended:
     for day in range(0, len(available_list)):
         if person in available_list[day]:
             for skill in range(0, len(skilled_list)):
-                if person in skilled_list[skill] and person in no_attended:
+                if person in skilled_list[skill]:
                     worker = arranged_lists[day][skill]
                     # print(day, " ", skill)
                     # print(person)
