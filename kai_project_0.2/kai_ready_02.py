@@ -1,7 +1,7 @@
 ###################
 # Author: Hu Guo
 # This program is used to automatically schedule work for members of Champaign Chinese Christian Church on Sunday.
-# v0.2003
+# v0.2005
 ###################
 # 安裝Python的Excel插件
 # 在命令行下輸入： pip3 install openpyxl
@@ -156,6 +156,11 @@ for person in attendance_list:
     if person in last_month_assigned_twice:
         attendance_list[person] = attendance_list.get(person) - 1
 
+print("根據上月擔班概要和本月值班概要, 增加只擔班一次人員的下月擔班優先級.")
+print("如果上月已經擔班兩次，本月在最開始運行程序時已經手動 \"+1\" 降低過擔班優先級。")
+print("所以上月擔班兩次的人員在本月實際擔班一次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次：")
+print()
+
 #########################################################
 # 檢查零擔班並優化本月擔班結果
 no_attended = [person for person in attendance_list if attendance_list.get(person) == 0]
@@ -176,28 +181,9 @@ for person in no_attended:
                         attendance_list[worker] = 1
                         arranged_lists[day][skill] = person
                         attendance_list[person] = 1
+                        print("優化了一次零擔班情況")
                       
-
 # print(no_attended)
-
-print("本月排班結果： 共", len(sundays), "個週日。")
-for day in range(0, days):
-    print(sundays[day], arranged_lists[day])
-print()
-
-print("根據上月擔班概要和本月值班概要, 增加只擔班一次人員的下月擔班優先級.")
-print("如果上月已經擔班兩次，本月在最開始運行程序時已經手動 \"+1\" 降低過擔班優先級。")
-print("所以上月擔班兩次的人員在本月實際擔班一次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次：")
-print()
-
-attended_1 = [person for person in attendance_list if attendance_list.get(person) == 1]
-print("本月實際擔班一次的人員有", len(attended_1), "人。 下月可以擔班兩次。")
-print(attended_1)
-print()
-
-attended_2 = [x for x in attendance_list if attendance_list.get(x) == 2]
-print("本月實際擔班兩次的人員有", len(attended_2), "人。 下月盡量只安排一次擔班。")
-print(attended_2, "\n")
 
 ##########################################################
 #  所有成員名單
@@ -207,7 +193,6 @@ for row in range(4, 30):
     if person != None:
         total_member_list.append(person)
 # print(total_member_list)
-
 
 # 生成優先安排的人名單
 total_attendance = dict()
@@ -226,24 +211,82 @@ for row in range(4, 30):
             if data == None or data == "其他":
                 duties.append("")
             else:
-                duties.append(data)
+                duties.append(data)      
     if person in total_attendance:
         total_attendance[person] += duties
 
 # for person in total_attendance:
 #     print(person, " ", total_attendance.get(person))
 
-# 本月綜合擔班情況
-print("本月綜合擔班情況")
+# 合併本月綜合擔班情況
 for day in range(0, days):
     for task in range(0, len(tasks)):
         total_attendance[arranged_lists[day][task]][day] = tasks[task]
+
+###############################################################
+# 優化綜合排班太多的人員擔班次數
+
+# 紀錄本月綜合擔班次數
+for person in total_attendance:
+    attendance = 0
+    for day in range(0, days):
+        task = total_attendance[person][day]
+        # print(task)
+        if total_attendance[person][day] != "":
+            attendance += 1
+    
+    total_attendance[person].append(attendance)
+
+# 找出擔班兩次之後還額外擔任優先task的人員
+busy_workers = [worker for worker in total_attendance if total_attendance[worker][-1] > 2 and attendance_list.get(worker) == 2]
+# print(busy_workers)
+
+# 找出本月只擔班一次的人員， 而且上月沒有擔班兩次
+attended_once = [worker for worker in total_attendance if total_attendance[worker][-1] == 1 and worker not in last_month_assigned_twice]
+# print(attended_once)
+
+# 按照名單來對比是否可以將擔班太多的人員task分給擔班一次的人員。如果沒有匹配，綜合擔班不會改變
+if len(busy_workers) > 0:
+    for person in attended_once:
+        for day in range(0, len(available_list)):
+            if person in available_list[day]:
+                for skill in range(0, len(skilled_list)):
+                    if person in skilled_list[skill]:
+                        worker = arranged_lists[day][skill]
+                        # 條件判定：能否分擔任務
+                        if worker in busy_workers:
+                            # print(worker)
+                            arranged_lists[day][skill] = person 
+                            attendance_list[worker] = attendance_list.get(worker) - 1
+                            attendance_list[person] = attendance_list.get(person) + 1
+                            busy_workers.remove(worker)
+                            print("優化了一次繁重擔班情況\n")
+                            total_attendance[person][day] = tasks[skill]
+                            total_attendance[person][-1] += 1
+                            total_attendance[worker][day] = ""
+                            total_attendance[worker][-1] -= 1  
+
+#################################################################
+
+attended_1 = [person for person in attendance_list if attendance_list.get(person) == 1]
+print("本月實際擔班一次的人員有", len(attended_1), "人。 下月可以擔班兩次。")
+print(attended_1)
+print()
+
+attended_2 = [x for x in attendance_list if attendance_list.get(x) == 2]
+print("本月實際擔班兩次的人員有", len(attended_2), "人。 下月盡量只安排一次擔班。")
+print(attended_2, "\n")
+
+print("本月排班結果： 共", len(sundays), "個週日。")
+for day in range(0, days):
+    print(sundays[day], arranged_lists[day])
+print()
+
+print("本月綜合擔班情況")
 for person in total_attendance:
     print(person, " ", total_attendance.get(person))
 
 # print(total_attendance)
-
-
 ####################################################
 # 保存排班概況與詳細安排到新xlsx文件
 wv = Workbook()
@@ -306,11 +349,11 @@ for person in total_attendance:
     shv.cell(14, count).value = person
     currentCell = shv.cell(14, count)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='center')
-    attendance = 0
-    for day in range(0, days):
-        if total_attendance[person][day] != "":
-            attendance += 1
-    shv.cell(15, count).value = attendance
+    # attendance = 0
+    # for day in range(0, days):
+    #     if total_attendance[person][day] != "":
+    #         attendance += 1
+    shv.cell(15, count).value = total_attendance[person][-1]
     shv.cell(16, count).value = "次"
     currentCell = shv.cell(16, count)  # or currentCell = ws['A1']
     currentCell.alignment = Alignment(horizontal='right')
