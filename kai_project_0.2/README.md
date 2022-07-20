@@ -5,6 +5,8 @@
   Fixed January report reading probelm.  
 # V0.2003  
   Add current year to the name of the output Excel file.   
+# V0.2004
+  Balancing works for a person with attendance as zero.  
  
 # 安排規則
   原則上每月每人擔班不超過兩次。如果某人本月實際擔班兩次，那麼下月將只擔班一次。  
