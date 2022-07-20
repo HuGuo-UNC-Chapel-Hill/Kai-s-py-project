@@ -8,7 +8,7 @@
 # V0.2004
   Balancing works for a person with attendance as zero.  
 # V0.2005
-  Balancing works for a perosn with too many attendances in one month.
+  Balancing works for a person with too many attendances in one month.
  
 # 安排規則
   原則上每月每人擔班不超過兩次。如果某人本月實際擔班兩次，那麼下月將只擔班一次。  
