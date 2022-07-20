@@ -8,7 +8,7 @@
  Adding skills to each member for specific tasks.  
  Add the total attendance report to the output Excel file.  
  Add current year to the output Excel file.  
- Balancing works for a person with attendance as zero.
+ Balancing works for a person with attendance as zero.  
  Balancing works for a person with too many attendances in one month.
 
 # 安排規則
