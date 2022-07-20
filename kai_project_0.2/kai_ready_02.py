@@ -158,7 +158,7 @@ for person in attendance_list:
 
 print("根據上月擔班概要和本月值班概要, 增加只擔班一次人員的下月擔班優先級.")
 print("如果上月已經擔班兩次，本月在最開始運行程序時已經手動 \"+1\" 降低過擔班優先級。")
-print("所以上月擔班兩次的人員在本月實際擔班一次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次：")
+print("所以上月擔班兩次的人員在本月實際擔班一次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次")
 print()
 
 #########################################################
@@ -254,7 +254,7 @@ if len(busy_workers) > 0:
                     if person in skilled_list[skill]:
                         worker = arranged_lists[day][skill]
                         # 條件判定：能否分擔任務
-                        if worker in busy_workers:
+                        if worker in busy_workers and attendance_list.get(person) == 1:
                             # print(worker)
                             arranged_lists[day][skill] = person 
                             attendance_list[worker] = attendance_list.get(worker) - 1
