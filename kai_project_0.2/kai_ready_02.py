@@ -1,7 +1,7 @@
 ###################
 # Author: Hu Guo
 # This program is used to automatically schedule work for members of Champaign Chinese Christian Church on Sunday.
-# v0.1002
+# v0.2003
 ###################
 # 安裝Python的Excel插件
 # 在命令行下輸入： pip3 install openpyxl
@@ -151,6 +151,35 @@ for day in range(0, days):
 # for day in range(0, days):
 #     print(arranged_lists[day])
 
+# 根據上月擔班概要和本月值班概要增加只擔班一次人員的下月擔班優先級
+for person in attendance_list:
+    if person in last_month_assigned_twice:
+        attendance_list[person] = attendance_list.get(person) - 1
+
+#########################################################
+# 檢查零擔班並優化本月擔班結果
+no_attended = [person for person in attendance_list if attendance_list.get(person) == 0]
+# no_attended.append("邵洪波")
+# no_attended.append("黃伊翎")
+# print(no_attended)
+
+for person in no_attended:
+    for day in range(0, len(available_list)):
+        if person in available_list[day]:
+            for skill in range(0, len(skilled_list)):
+                if person in skilled_list[skill] and person in no_attended:
+                    worker = arranged_lists[day][skill]
+                    # print(day, " ", skill)
+                    # print(person)
+                    # print(worker)
+                    if worker != "無安排" and attendance_list.get(worker) == 2 and attendance_list[person] == 0:
+                        attendance_list[worker] = 1
+                        arranged_lists[day][skill] = person
+                        attendance_list[person] = 1
+                      
+
+# print(no_attended)
+
 print("本月排班結果： 共", len(sundays), "個週日。")
 for day in range(0, days):
     print(sundays[day], arranged_lists[day])
@@ -159,13 +188,6 @@ print()
 print("根據上月擔班概要和本月值班概要, 增加只擔班一次人員的下月擔班優先級.")
 print("如果上月已經擔班兩次，本月在最開始運行程序時已經手動 \"+1\" 降低過擔班優先級。")
 print("所以上月擔班兩次的人員在本月實際擔班一次的情況下會顯示值班2次。那麼現在會通過 \"-1\" 增加下月排班的優先級，下月能夠擔班兩次：")
-print()
-
-# 根據上月擔班概要和本月值班概要增加只擔班一次人員的下月擔班優先級
-for person in attendance_list:
-    if person in last_month_assigned_twice:
-        attendance_list[person] = attendance_list.get(person) - 1
-print("優化完畢")
 print()
 
 attended_1 = [person for person in attendance_list if attendance_list.get(person) == 1]
